@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        nuxt-fundamentals <br />
+        Pux-fundamentals <br />
         {{ $t('welcome') }}
       </h1>
       <div class="links">
