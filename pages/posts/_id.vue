@@ -11,7 +11,7 @@
       <aside>
         <h3>Posts you might enjoy</h3>
 
-        <ul>
+        <ul class="links">
           <li v-for="(related, index) in relatedPosts" :key="index">
             <!-- <a :href="`/posts/${related.id}`">{{ related.title }}</a> -->
             <nuxt-link :to="{ name: 'posts-id', params: { id: related.id } }">
@@ -64,4 +64,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.links {
+  font-size: 1.1rem;
+}
+</style>

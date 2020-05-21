@@ -9,6 +9,7 @@
         <nuxt-link
           v-for="post in posts"
           :key="post.id"
+          class="m-3 p-2"
           :to="{ name: 'posts-id', params: { id: post.id } }"
         >
           {{ post.title }}
@@ -84,5 +85,13 @@ export default {
 
 .links {
   padding-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.links a {
+  font-size: 1.2rem;
+  border: 1px solid white;
+  border-radius: 3px;
 }
 </style>
