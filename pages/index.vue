@@ -39,7 +39,11 @@ export default {
   },
 
   head() {
+    const i18nSeo = this.$nuxtI18nSeo()
     return {
+      htmlAttrs: {
+        ...i18nSeo.htmlAttrs,
+      },
       title: 'Home page 🏡',
       meta: [
         { name: 'twitter:title', content: 'Welcome to nuxt babe' },
@@ -47,10 +51,12 @@ export default {
         {
           name: 'twitter:image',
           content:
-            'hhttps://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Ftraditional-chinese-dim-sum-malar-cake-with-tea-picture-id186362617&f=1&nofb=1',
+            'hhttps://external-co>ntent.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Ftraditional-chinese-dim-sum-malar-cake-with-tea-picture-id186362617&f=1&nofb=1',
         },
         { name: 'twitter:card', content: 'sumarry_large_image' },
+        ...i18nSeo.meta,
       ],
+      link: [...i18nSeo.link],
     }
   },
 }

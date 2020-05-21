@@ -49,9 +49,22 @@ export default {
    ** i18n configuration
    */
   i18n: {
+    seo: true,
+    baseUrl: 'http://localhost:3000',
     strategy: 'prefix',
-    locales: ['en', 'fr'],
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US', // Will be used as catchall locale by default
+      },
+      {
+        code: 'fr',
+        iso: 'fr-FR',
+      },
+    ],
     defaultLocale: 'en',
+    // lazy: true,
+    // langDir: '~/locales/',
     vueI18n: {
       fallbackLocale: 'en',
       messages: {

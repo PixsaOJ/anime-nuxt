@@ -49,7 +49,11 @@ export default {
   },
 
   head() {
+    const i18nSeo = this.$nuxtI18nSeo()
     return {
+      htmlAttrs: {
+        ...i18nSeo.htmlAttrs,
+      },
       title: this.post.title,
       meta: [
         { name: 'twitter:title', content: this.post.title },
@@ -60,7 +64,9 @@ export default {
             'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Fchinese-food-dim-sum-on-green-background-picture-id667690616&f=1&nofb=1',
         },
         { name: 'twitter:card', content: 'sumarry_large_image' },
+        ...i18nSeo.meta,
       ],
+      link: [...i18nSeo.link],
     }
   },
 }
