@@ -2,8 +2,12 @@
   <nav class="navbar navbar-dark bg-dark">
     <nuxt-link class="navbar-brand" :to="localePath('index')">Home</nuxt-link>
 
-    <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
-    <nuxt-link :to="switchLocalePath('fr')">Français</nuxt-link>
+    <nuxt-link :to="switchLocalePath('en')" class="locales p-2"
+      >🇬🇧 English</nuxt-link
+    >
+    <nuxt-link :to="switchLocalePath('fr')" class="locales p-2"
+      >🇫🇷 Français</nuxt-link
+    >
 
     <form class="form-inline">
       <input
@@ -23,4 +27,11 @@
 export default {}
 </script>
 
-<style scoped></style>
+<style scoped>
+.locales {
+  font-size: 1.2rem;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+</style>
