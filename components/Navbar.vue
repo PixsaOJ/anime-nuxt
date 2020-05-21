@@ -1,6 +1,10 @@
 <template>
   <nav class="navbar navbar-dark bg-dark">
-    <nuxt-link class="navbar-brand" :to="{ name: 'index' }">Home</nuxt-link>
+    <nuxt-link class="navbar-brand" :to="localePath('index')">Home</nuxt-link>
+
+    <nuxt-link :to="switchLocalePath('en')">English</nuxt-link>
+    <nuxt-link :to="switchLocalePath('fr')">Français</nuxt-link>
+
     <form class="form-inline">
       <input
         class="form-control mr-sm-2"

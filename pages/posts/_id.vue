@@ -14,7 +14,9 @@
         <ul class="links">
           <li v-for="(related, index) in relatedPosts" :key="index">
             <!-- <a :href="`/posts/${related.id}`">{{ related.title }}</a> -->
-            <nuxt-link :to="{ name: 'posts-id', params: { id: related.id } }">
+            <nuxt-link
+              :to="localePath({ name: 'posts-id', params: { id: related.id } })"
+            >
               {{ related.title }}
             </nuxt-link>
           </li>

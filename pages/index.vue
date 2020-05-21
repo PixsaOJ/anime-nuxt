@@ -3,14 +3,15 @@
     <div>
       <logo />
       <h1 class="title">
-        nuxt-fundamentals
+        nuxt-fundamentals <br />
+        {{ $t('welcome') }}
       </h1>
       <div class="links">
         <nuxt-link
           v-for="post in posts"
           :key="post.id"
           class="m-3 p-2"
-          :to="{ name: 'posts-id', params: { id: post.id } }"
+          :to="localePath({ name: 'posts-id', params: { id: post.id } })"
         >
           {{ post.title }}
         </nuxt-link>
