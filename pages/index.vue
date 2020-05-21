@@ -24,7 +24,7 @@ import Logo from '~/components/Logo.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
   },
 
   async fetch({ store }) {
@@ -34,7 +34,7 @@ export default {
   computed: {
     posts() {
       return this.$store.state.posts.all
-    }
+    },
   },
 
   head() {
@@ -46,12 +46,12 @@ export default {
         {
           name: 'twitter:image',
           content:
-            'hhttps://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Ftraditional-chinese-dim-sum-malar-cake-with-tea-picture-id186362617&f=1&nofb=1'
+            'hhttps://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Ftraditional-chinese-dim-sum-malar-cake-with-tea-picture-id186362617&f=1&nofb=1',
         },
-        { name: 'twitter:card', content: 'sumarry_large_image' }
-      ]
+        { name: 'twitter:card', content: 'sumarry_large_image' },
+      ],
     }
-  }
+  },
 }
 </script>
 

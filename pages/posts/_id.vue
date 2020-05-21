@@ -32,7 +32,7 @@ export default {
 
   data() {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
     }
   },
 
@@ -43,7 +43,7 @@ export default {
 
     relatedPosts() {
       return this.$store.state.posts.all.filter((post) => post.id !== this.id)
-    }
+    },
   },
 
   head() {
@@ -55,12 +55,12 @@ export default {
         {
           name: 'twitter:image',
           content:
-            'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Fchinese-food-dim-sum-on-green-background-picture-id667690616&f=1&nofb=1'
+            'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Fchinese-food-dim-sum-on-green-background-picture-id667690616&f=1&nofb=1',
         },
-        { name: 'twitter:card', content: 'sumarry_large_image' }
-      ]
+        { name: 'twitter:card', content: 'sumarry_large_image' },
+      ],
     }
-  }
+  },
 }
 </script>
 

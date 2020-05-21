@@ -1,7 +1,7 @@
 // Loading state values to store from axios before render
 
 export const state = () => ({
-  all: []
+  all: [],
 })
 
 export const actions = {
@@ -17,7 +17,7 @@ export const actions = {
       // const post = await this.$axios.$get(`posts/${id}`) // commenting for now for perfomance
       // commit('setPost', post)
     }
-  }
+  },
 }
 
 export const mutations = {
@@ -26,5 +26,5 @@ export const mutations = {
   },
   setPosts(state, posts) {
     state.all = posts
-  }
+  },
 }
