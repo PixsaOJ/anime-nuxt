@@ -25,14 +25,12 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
-  async asyncData({ params }) {
-    const response = await axios.get(
+  async asyncData({ params, $axios }) {
+    const post = await $axios.$get(
       `https://jsonplaceholder.typicode.com/posts/${params.id}`
     )
-    return { post: response.data }
+    return { post }
   },
 
   data() {

@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Logo from '~/components/Logo.vue'
 
 export default {
@@ -27,11 +26,11 @@ export default {
     Logo
   },
 
-  async asyncData(context) {
-    const response = await axios.get(
+  async asyncData({ $axios }) {
+    const posts = await $axios.$get(
       'https://jsonplaceholder.typicode.com/posts'
     )
-    return { posts: response.data }
+    return { posts }
   },
 
   head() {
