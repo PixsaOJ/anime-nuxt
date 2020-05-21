@@ -4,7 +4,7 @@
       <article>
         <h1 class="title">{{ post.title }}</h1>
         <p>
-          {{ post.content }}
+          {{ post.body }}
         </p>
       </article>
 
@@ -25,7 +25,16 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
+  async asyncData({ params }) {
+    const response = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts/${params.id}`
+    )
+    return { post: response.data }
+  },
+
   data() {
     return {
       id: this.$route.params.id
@@ -33,10 +42,6 @@ export default {
   },
 
   computed: {
-    post() {
-      return this.$store.state.posts.all.find((post) => post.id === this.id)
-    },
-
     relatedPosts() {
       return this.$store.state.posts.all.filter((post) => post.id !== this.id)
     }
