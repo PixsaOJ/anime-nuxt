@@ -27,9 +27,7 @@
 <script>
 export default {
   async asyncData({ params, $axios }) {
-    const post = await $axios.$get(
-      `https://jsonplaceholder.typicode.com/posts/${params.id}`
-    )
+    const post = await $axios.$get(`posts/${params.id}`)
     return { post }
   },
 
