@@ -26,9 +26,8 @@
 
 <script>
 export default {
-  async asyncData({ params, $axios }) {
-    const post = await $axios.$get(`posts/${params.id}`)
-    return { post }
+  async fetch({ store, params }) {
+    await store.dispatch('posts/fetchPost', params.id)
   },
 
   data() {
@@ -38,6 +37,10 @@ export default {
   },
 
   computed: {
+    post() {
+      return this.$store.state.posts.all.find((p) => p.id === Number(this.id))
+    },
+
     relatedPosts() {
       return this.$store.state.posts.all.filter((post) => post.id !== this.id)
     }
