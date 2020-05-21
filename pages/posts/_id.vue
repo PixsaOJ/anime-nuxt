@@ -58,6 +58,7 @@ export default {
       meta: [
         { name: 'twitter:title', content: this.post.title },
         { name: 'twitter:description', content: this.post.content },
+        { name: 'description', content: this.post.content },
         {
           name: 'twitter:image',
           content:

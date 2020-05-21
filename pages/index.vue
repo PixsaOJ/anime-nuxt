@@ -49,6 +49,10 @@ export default {
         { name: 'twitter:title', content: 'Welcome to nuxt babe' },
         { name: 'twitter:description', content: 'Very gut web nuxtbabe' },
         {
+          name: 'description',
+          content: 'This is really cool 100% seo-friendly webpage',
+        },
+        {
           name: 'twitter:image',
           content:
             'hhttps://external-co>ntent.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Ftraditional-chinese-dim-sum-malar-cake-with-tea-picture-id186362617&f=1&nofb=1',
