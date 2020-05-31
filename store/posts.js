@@ -7,12 +7,12 @@ export const state = () => ({
 export const actions = {
   async fetchAllPosts({ state, commit }) {
     if (state.all.length > 1) return
-    const posts = await this.$axios.$get('posts')
-    commit('setPosts', posts)
+    const posts = await this.$axios.$get('/top/anime/1/favorite')
+    commit('setPosts', posts.top)
   },
 
   async fetchPost({ state, commit }, id) {
-    if (!state.all.find((post) => post.id === id)) {
+    if (!state.all.find((post) => post.mal_id === id)) {
       await this.dispatch('posts/fetchAllPosts') // change this to fetch related posts in future
       // const post = await this.$axios.$get(`posts/${id}`) // commenting for now for perfomance
       // commit('setPost', post)

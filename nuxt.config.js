@@ -43,7 +43,7 @@ export default {
    ** axios configuration
    */
   axios: {
-    baseURL: 'https://jsonplaceholder.typicode.com',
+    baseURL: 'https://api.jikan.moe/v3',
   },
   /*
    ** i18n configuration

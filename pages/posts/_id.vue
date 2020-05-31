@@ -3,31 +3,36 @@
     <div class="container mt-5">
       <article>
         <h1 class="title">{{ post.title }}</h1>
-        <p>
-          {{ post.body }}
-        </p>
+        <div class="card mx-auto my-5" style="width: 18rem;">
+          <img
+            class="card-img-top post__image"
+            :src="post.image_url"
+            :alt="post.title"
+          />
+          <div class="card-body">
+            <a :href="post.url" class="btn btn-primary">Visit Page</a>
+          </div>
+        </div>
       </article>
 
-      <aside>
-        <h3>Posts you might enjoy</h3>
+      <hr />
 
-        <ul class="links">
-          <li v-for="(related, index) in relatedPosts" :key="index">
-            <!-- <a :href="`/posts/${related.id}`">{{ related.title }}</a> -->
-            <nuxt-link
-              :to="localePath({ name: 'posts-id', params: { id: related.id } })"
-            >
-              {{ related.title }}
-            </nuxt-link>
-          </li>
-        </ul>
+      <aside>
+        <h3>Animes you might also enjoy</h3>
+        <relatedAnime :related-posts="relatedPosts" />
       </aside>
     </div>
   </div>
 </template>
 
 <script>
+import RelatedAnime from '~/components/RelatedAnime.vue'
+
 export default {
+  components: {
+    RelatedAnime,
+  },
+
   async fetch({ store, params }) {
     await store.dispatch('posts/fetchPost', params.id)
   },
@@ -40,11 +45,15 @@ export default {
 
   computed: {
     post() {
-      return this.$store.state.posts.all.find((p) => p.id === Number(this.id))
+      return this.$store.state.posts.all.find(
+        (p) => p.mal_id === Number(this.id)
+      )
     },
 
     relatedPosts() {
-      return this.$store.state.posts.all.filter((post) => post.id !== this.id)
+      return this.$store.state.posts.all.filter(
+        (post) => post.mal_id !== Number(this.id)
+      )
     },
   },
 
@@ -61,8 +70,7 @@ export default {
         { name: 'description', content: this.post.post },
         {
           name: 'twitter:image',
-          content:
-            'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.gettyimages.com%2Fphotos%2Fchinese-food-dim-sum-on-green-background-picture-id667690616&f=1&nofb=1',
+          content: this.post.image_url,
         },
         { name: 'twitter:card', content: 'sumarry_large_image' },
         ...i18nSeo.meta,
@@ -73,8 +81,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.links {
-  font-size: 1.1rem;
+<style lang="css" scoped>
+.post__image {
+  max-height: 350px;
 }
 </style>

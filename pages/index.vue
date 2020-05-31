@@ -9,9 +9,9 @@
       <div class="links">
         <nuxt-link
           v-for="post in posts"
-          :key="post.id"
+          :key="post.mal_id"
           class="m-3 p-2"
-          :to="localePath({ name: 'posts-id', params: { id: post.id } })"
+          :to="localePath({ name: 'posts-id', params: { id: post.mal_id } })"
         >
           {{ post.title }}
         </nuxt-link>
