@@ -23,6 +23,7 @@ export default {
     manifest: {
       name: 'Top Anime list',
       short_name: "Pixsa's Anime List",
+      display: 'fullscreen',
       background_color: 'rgb(6,6,6)',
       theme_color: 'rgb(6,6,6)',
       lang: 'en',
