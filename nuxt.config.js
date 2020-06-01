@@ -33,6 +33,7 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/pwa',
     '@nuxtjs/eslint-module',
   ],
   /*
