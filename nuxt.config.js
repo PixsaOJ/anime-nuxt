@@ -17,6 +17,18 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
+   ** PWA CONFIG
+   */
+  pwa: {
+    manifest: {
+      name: 'Top Anime list',
+      short_name: "Pixsa's Anime List",
+      background_color: 'rgb(6,6,6)',
+      theme_color: 'rgb(6,6,6)',
+      lang: 'en',
+    },
+  },
+  /*
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
