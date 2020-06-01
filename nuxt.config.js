@@ -24,9 +24,24 @@ export default {
       name: 'Top Anime list',
       short_name: "Pixsa's Anime List",
       display: 'fullscreen',
+      orientation: 'portrait-primary',
       background_color: 'rgb(6,6,6)',
       theme_color: 'rgb(6,6,6)',
       lang: 'en',
+    },
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'https://api.jikan.moe/v3/.*',
+          strategyOptions: {
+            cacheName: 'pixsa-cache',
+            cacheExpiration: {
+              maxEntries: 100,
+              maxAgeSeconds: 60 * 60 * 72,
+            },
+          },
+        },
+      ],
     },
   },
   /*
