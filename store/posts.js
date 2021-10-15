@@ -14,7 +14,7 @@ export const actions = {
   async fetchPost({ state, commit }, id) {
     if (!state.all.find((post) => post.mal_id === id)) {
       await this.dispatch('posts/fetchAllPosts') // change this to fetch related posts in future
-      // const post = await this.$axios.$get(`posts/${id}`) // commenting for now for perfomance
+      // const post = await this.$axios.$get(`posts/${id}`) // commenting for now for performance
       // commit('setPost', post)
     }
   },
