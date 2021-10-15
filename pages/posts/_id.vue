@@ -1,27 +1,25 @@
 <template>
-  <div>
-    <div class="container mt-5">
-      <article>
-        <h1 class="title">{{ post.title }}</h1>
-        <div class="card mx-auto my-5" style="width: 18rem;">
-          <img
-            class="card-img-top post__image"
-            :src="post.image_url"
-            :alt="post.title"
-          />
-          <div class="card-body">
-            <a :href="post.url" class="btn btn-primary">Visit Page</a>
-          </div>
+  <div class="container mt-5">
+    <article>
+      <h1 class="title">{{ post.title }}</h1>
+      <div class="card mx-auto my-5" style="width: 18rem">
+        <img
+          class="card-img-top post__image"
+          :src="post.image_url"
+          :alt="post.title"
+        />
+        <div class="card-body">
+          <a :href="post.url" class="btn btn-primary">Visit Page</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <hr />
+    <hr />
 
-      <aside>
-        <h3>Animes you might also enjoy</h3>
-        <relatedAnime :related-posts="relatedPosts" />
-      </aside>
-    </div>
+    <aside>
+      <h3>Animes you might also enjoy</h3>
+      <relatedAnime :related-posts="relatedPosts" />
+    </aside>
   </div>
 </template>
 
